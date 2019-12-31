@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.bdi.sb.mapper.BoardInfoMapper">
+	
+	<select id="selectBoardInfoList" resultType="board">
+		select * from board_info
+		order by bi_num desc
+		limit #{page.startNum},#{page.pageSize}
+	</select>
+
+	
+	<insert id="insertBoardInfo">
+		insert into board_info(bi_title, bi_writer, bi_content, bi_file, credat, cretim)
+		values(#{biTitle},#{biWriter},#{biContent},#{biFile},date_format(now(),'%Y%m%d'),date_format(now(),'%H%i%S'))
+	</insert>
+	
+</mapper>
