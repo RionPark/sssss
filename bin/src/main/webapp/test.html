@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+/* var Calc = function(n1, n2){
+	this.op = function(op){
+		if(op=='+'){
+			return n1+n2;
+		}else if(op=='-'){
+			return n1-n2;
+		}else if(op=='*'){
+			return n1*n2;
+		}else if(op=='/'){
+			return n1/n2;
+		}else{
+			alert('지원하지 않는 연산자 입니다.');
+		}	
+	}
+} */
+
+
+class Calc{
+	constructor(n1, n2){
+		this._n1 = n1;
+		this._n2 = n2;
+	}
+	op(op){
+		if(op=='+'){
+			return this._n1+this._n2;
+		}else if(op=='-'){
+			return this._n1-this._n2;
+		}else if(op=='*'){
+			return this._n1*this._n2;
+		}else if(op=='/'){
+			return this._n1/this._n2;
+		}else{
+			alert('지원하지 않는 연산자 입니다.');
+		}	
+	}
+}
+
+var c = new Calc(1,2);
+var result = c.op('+');
+alert(result);
+</script>
+</body>
+</html>

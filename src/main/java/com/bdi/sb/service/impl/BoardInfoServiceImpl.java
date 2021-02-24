@@ -50,4 +50,19 @@ public class BoardInfoServiceImpl implements BoardInfoService {
 		return biMapper.insertBoardInfo(board);
 	}
 
+	@Override
+	public int updateBoardInfo(BoardInfoVO board) {
+		return biMapper.updateBoardInfo(board);
+	}
+
+	@Override
+	public int deleteBoardInfo(BoardInfoVO board) {
+		return biMapper.deleteBoardInfo(board);
+	}
+
+	@Override
+	public BoardInfoVO selectBoardInfo(BoardInfoVO board) {
+		return biMapper.selectBoardInfo(board);
+	}
+
 }

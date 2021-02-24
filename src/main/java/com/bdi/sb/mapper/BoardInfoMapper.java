@@ -8,5 +8,8 @@ import com.bdi.sb.vo.PageVO;
 public interface BoardInfoMapper {
 
 	List<BoardInfoVO> selectBoardInfoList(BoardInfoVO board, PageVO page);
+	BoardInfoVO selectBoardInfo(BoardInfoVO board);
 	int insertBoardInfo(BoardInfoVO board);
+	int updateBoardInfo(BoardInfoVO board);
+	int deleteBoardInfo(BoardInfoVO board);
 }

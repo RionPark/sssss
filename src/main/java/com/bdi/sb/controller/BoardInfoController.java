@@ -1,13 +1,13 @@
 package com.bdi.sb.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.bdi.sb.service.BoardInfoService;
 import com.bdi.sb.vo.BoardInfoVO;
@@ -15,7 +15,7 @@ import com.bdi.sb.vo.PageVO;
 
 import lombok.extern.slf4j.Slf4j;
 
-@RestController
+@Controller
 @Slf4j
 public class BoardInfoController {
 
@@ -24,18 +24,15 @@ public class BoardInfoController {
 	
 	
 	@PostMapping("/boardinfo")
-	public Map<String,Object> insertBoard(BoardInfoVO board){
-		log.info("board=>{}", board);
+	public String insertBoard(BoardInfoVO board,Model m){
 		int cnt = biService.insertBoardInfo(board);
-		return null;
+		m.addAttribute("result",cnt);
+		return "/front/board/insert";
 	}
 	@GetMapping("/boardinfos")
-	public List<BoardInfoVO> selectBoardInfo(BoardInfoVO board, PageVO page) {
-		log.info("page=>{}",page);
-		String str = "";
-		for(int i=1;i<=60000;i++) {
-			str += i;
-		}
-		return biService.selectBoardInfoList(board, page);
+	public String selectBoardInfo(BoardInfoVO board, PageVO page,Model m) {
+		log.info("list=>{}",biService.selectBoardInfoList(board, page));
+		m.addAttribute("list",biService.selectBoardInfoList(board, page));
+		return "/front/board/list";
 	}
 }
