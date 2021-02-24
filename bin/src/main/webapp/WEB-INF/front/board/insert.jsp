@@ -10,16 +10,13 @@
 <body>
 <c:if test="${! empty result}">
 <script>
-	if(${result}==1){
-		alert('등록되었습니다.');
-		location.href='/boardinfos'
-	}
+	alert(1);
 </script>
 </c:if>
-<form method="post" action="/boardinfo/insert" enctype="multipart/form-data">
-	<input type="text" name="biTitle" placeholder="제목"><br>
+<form method="post" action="">
+	<input type="text" name="biName" placeholder="이름"><br>
+	<input type="text" name="biTitle" placeholder="이름"><br>
 	<textarea name="biContent"></textarea><br>
-	<input type="text" name="biWriter" placeholder="이름"><br>
 	<button>글쓰기</button>
 </form>
 </body>

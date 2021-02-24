@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 		MongoAutoConfiguration.class,
 		MongoDataAutoConfiguration.class})
 @MapperScan({"com.bdi.sb.mapper"})
-@PropertySource({"env.properties"})
+@PropertySource({"classpath:/env.properties"})
 public class SbMybatis1Application {
 
 	public static void main(String[] args) {

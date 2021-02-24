@@ -25,7 +25,7 @@
 	</thead>
 	<tbody>
 	<c:forEach var="bi" items="${list}">
-		<tr onclick="location.href='/boardinfo?biNum=${bi.biNum}'" style="cursor:pointer">
+		<tr>
 			<td>${bi.biNum}</td>
 			<td>${bi.biTitle}</td>
 			<td>${bi.biWriter}</td>
